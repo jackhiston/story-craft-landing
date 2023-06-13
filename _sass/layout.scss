@@ -280,6 +280,13 @@ nav > ul li a:active {
 	margin-left: 30px;
 }
 
+.main-text-background {
+	background-color: rgba($header-color, .8);
+	padding: 0 10px 20px 10px;
+	border-radius: 10px;
+}
+
+
 .appName {
 	color: $app-title-color;
 }
