@@ -36,7 +36,7 @@ mastodon_link                             :
 # Feature List                            Edit, add or remove features to be presented.
 features                                  :
 
-  - title                                 : AI Driven Storytime
+  - title                                 : AI-driven Storytime
     description                           : Create AI-driven custom stories with unique imagery, that your child can call their own.
     fontawesome_icon_name                 : magic
     
