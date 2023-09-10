@@ -44,15 +44,17 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Create assetlinks.json
         run: |
-          mkdir -p ./_pages/.well-known/
-          echo '[{
+          echo '---
+            permalink: /.well-known/assetlinks.json
+          ---
+          [{
             "relation": ["delegate_permission/common.handle_all_urls"],
             "target": {
               "namespace": "android_app",
               "package_name": "com.storycraftv2",
               "sha256_cert_fingerprints": ["${{ secrets.DIGITAL_ASSET_FINGERPRINT }}"]
             }
-          }]' > ./_pages/.well-known/assetlinks.json
+          }]' > ./_pages/assetlinks.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
