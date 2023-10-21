@@ -46,6 +46,7 @@ jobs:
         run: |
           echo '---
             permalink: /.well-known/assetlinks.json
+            hide_in_footer: true
           ---
           [{
             "relation": ["delegate_permission/common.handle_all_urls"],
@@ -59,6 +60,7 @@ jobs:
         run: |
           echo '---
             permalink: /app-ads.txt
+            hide_in_footer: true
           ---
           google.com, pub-3391511171753839, DIRECT, f08c47fec0942fa0' > ./_pages/app-ads.txt
       - name: Build with Jekyll
