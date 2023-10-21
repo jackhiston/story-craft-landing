@@ -55,6 +55,12 @@ jobs:
               "sha256_cert_fingerprints": ["${{ secrets.DIGITAL_ASSET_FINGERPRINT }}"]
             }
           }]' > ./_pages/assetlinks.json
+      - name: Create app-ads.txt
+        run: |
+          echo '---
+            permalink: /app-ads.txt
+          ---
+          google.com, pub-3391511171753839, DIRECT, f08c47fec0942fa0' > ./_pages/app-ads.txt
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
