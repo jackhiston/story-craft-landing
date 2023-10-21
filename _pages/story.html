@@ -9,9 +9,10 @@ include_in_header: false
         // Assuming you pass the storyId as a query parameter like ?id=12345
         const urlParams = new URLSearchParams(window.location.search);
         const storyId = urlParams.get('id');
+        const userId = urlParams.get('user_id');
         
         if (storyId) {
-            window.location.href = `storycraft://story/${storyId}`;
+            window.location.href = `storycraft://${userId}/story/${storyId}`;
 
             setTimeout(() => {
                 // If the user is still here after 2 seconds, the app probably didn't open.
