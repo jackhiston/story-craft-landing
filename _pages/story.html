@@ -1,0 +1,31 @@
+---
+layout: page
+title: Open Story
+include_in_header: false
+---
+
+<script>
+    function tryOpenApp() {
+        // Assuming you pass the storyId as a query parameter like ?id=12345
+        const urlParams = new URLSearchParams(window.location.search);
+        const storyId = urlParams.get('id');
+        
+        if (storyId) {
+            window.location.href = `storycraft://story/${storyId}`;
+
+            setTimeout(() => {
+                // If the user is still here after 2 seconds, the app probably didn't open.
+                // Redirect to the Google Play Store.
+                window.location.href = "https://play.google.com/store/apps/details?id=com.storycraftv2";
+            }, 2000);
+        } else {
+            // Redirect to the homepage if id is not provided
+            window.location.href = "/";
+        }
+    }
+</script>
+
+<body onload="tryOpenApp()">
+    <!-- Content informing the user about what's happening, or instructions -->
+    <p>If you are not redirected, please make sure you have the StoryCraft app installed. Or get it on the <a href="https://play.google.com/store/apps/details?id=com.storycraftv2">Google Play Store</a>.</p>
+</body>
