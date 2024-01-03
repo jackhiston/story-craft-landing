@@ -138,6 +138,9 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  posts:
+    output: true
+    permalink: /:path/
 
 # Markdown rendering
 markdown: kramdown
